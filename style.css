@@ -9,8 +9,13 @@
 .pink {
   background-color: pink;
 }
+
 .black {
   background-color: black;
+}
+
+.white {
+  background-color: white;
 }
 
 .color {
@@ -20,6 +25,19 @@
   height: 40px;
 }
 
+.pixel {
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  display: inline-flex;
+}
+
 #color-palette {
   border: 3px solid red;
+}
+#pixel-board {
+  border: dotted 3px maroon;
+  display: inline-block;
+  width: 250px;
 }
