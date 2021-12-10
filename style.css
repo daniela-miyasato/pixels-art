@@ -1,0 +1,25 @@
+.aqua {
+  background-color: aqua;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pink {
+  background-color: pink;
+}
+.purple {
+  background-color: purple;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
+
+#color-palette {
+  border: 3px solid red;
+}
