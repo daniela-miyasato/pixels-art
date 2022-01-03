@@ -42,3 +42,18 @@ function criaPixels(n) {
   }
 }
 criaPixels(25);
+
+// Requisito 6 defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
+
+palette.children[0].classList.add('selected');
+
+// Requisito 7
+// Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+
+function colorChange(event) {
+  let colorSelected = document.getElementsByClassName('selected');
+  colorSelected[0].classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+palette.addEventListener('click', colorChange);
