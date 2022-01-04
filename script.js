@@ -50,10 +50,21 @@ palette.children[0].classList.add('selected');
 // Requisito 7
 // Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
 
-function colorChange(event) {
+function colorDefine(event) {
   let colorSelected = document.getElementsByClassName('selected');
   colorSelected[0].classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-palette.addEventListener('click', colorChange);
+palette.addEventListener('click', colorDefine);
+
+// Requisito 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+
+function colorChange(event) {
+  let colorSelected = document.getElementsByClassName('selected');
+  let currentColor = colorSelected[0].classList[1];
+  let removeColor = event.target.classList.remove(event.target.classList[1]);
+  let newColor = event.target.classList.add(currentColor);
+}
+let board = document.getElementById('pixel-board');
+board.addEventListener('click', colorChange);
