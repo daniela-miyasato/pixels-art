@@ -75,8 +75,8 @@ function clearBoard() {
   const quadradinho = document.getElementsByClassName('pixel');
   for (let index = 0; index < quadradinho.length; index += 1) {
     quadradinho[index].classList.remove(quadradinho[index].classList[1]);
-  }
-  for (let index = 0; index < quadradinho.length; index += 1) {
+    // }
+    // for (let index = 0; index < quadradinho.length; index += 1) {
     quadradinho[index].classList.add('white');
   }
 }
