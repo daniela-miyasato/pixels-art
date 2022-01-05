@@ -1,10 +1,10 @@
 // Requisittos 2 e 3
 
 // captura elemento
-let palette = document.getElementById('color-palette');
+const palette = document.getElementById('color-palette');
 
 // cria uma div para colocar o quadradinho com a cor
-let black = document.createElement('div');
+const black = document.createElement('div');
 
 // configura elemento
 black.className = 'color black';
@@ -14,7 +14,7 @@ palette.appendChild(black);
 
 // fazer o mesmo com as outras 3 cores
 function criaCor(palette, classes) {
-  let cor = document.createElement('div');
+  const cor = document.createElement('div');
   cor.className = classes;
   palette.appendChild(cor);
 }
@@ -34,9 +34,9 @@ criaCor(palette, 'color aqua');
 // adicionar 25 pixels.
 
 function criaPixels(n) {
-  let board = document.getElementById('pixel-board');
+  const board = document.getElementById('pixel-board');
   for (let index = 0; index < n; index += 1) {
-    let onePixel = document.createElement('div');
+    const onePixel = document.createElement('div');
     onePixel.className = 'pixel white';
     board.appendChild(onePixel);
   }
@@ -51,7 +51,7 @@ palette.children[0].classList.add('selected');
 // Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
 
 function colorDefine(event) {
-  let colorSelected = document.getElementsByClassName('selected');
+  const colorSelected = document.getElementsByClassName('selected');
   colorSelected[0].classList.remove('selected');
   event.target.classList.add('selected');
 }
@@ -61,10 +61,25 @@ palette.addEventListener('click', colorDefine);
 // Requisito 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
 
 function colorChange(event) {
-  let colorSelected = document.getElementsByClassName('selected');
-  let currentColor = colorSelected[0].classList[1];
-  let removeColor = event.target.classList.remove(event.target.classList[1]);
-  let newColor = event.target.classList.add(currentColor);
+  const colorSelected = document.getElementsByClassName('selected');
+  const currentColor = colorSelected[0].classList[1];
+  const removeColor = event.target.classList.remove(event.target.classList[1]);
+  const newColor = event.target.classList.add(currentColor);
 }
-let board = document.getElementById('pixel-board');
+const board = document.getElementById('pixel-board');
 board.addEventListener('click', colorChange);
+
+// Requisito 9 Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+
+function clearBoard() {
+  const quadradinho = document.getElementsByClassName('pixel');
+  for (let index = 0; index < quadradinho.length; index += 1) {
+    quadradinho[index].classList.remove(quadradinho[index].classList[1]);
+  }
+  for (let index = 0; index < quadradinho.length; index += 1) {
+    quadradinho[index].classList.add('white');
+  }
+}
+
+const button = document.getElementById('clear-board');
+button.addEventListener('click', clearBoard);
